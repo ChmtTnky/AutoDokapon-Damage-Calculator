@@ -11,13 +11,6 @@ void Fighter::populateadd()
     char* datablock = new char[56];
     Game->readFromRAM((u32) mainadd, datablock, 56, false);
 
-    /*for (int i = 0; i < 56; i++)
-    {
-        cout << (int)(unsigned char)(*(datablock + i)) << " ";
-        if (i % 4 == 3)
-            cout << endl;
-    }*/
-
     structadd = hextonum(datablock, 4) - 0x80000000;
     wpadd = hextonum(datablock + 4, 4) - 0x80000000;
     shadd = hextonum(datablock + 8, 4) - 0x80000000;
